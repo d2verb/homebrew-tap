@@ -5,21 +5,21 @@
 class Alpaca < Formula
   desc "Lightweight llama-server wrapper for macOS"
   homepage "https://github.com/d2verb/alpaca"
-  version "0.0.3"
+  version "0.0.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.3/alpaca_0.0.3_darwin_amd64.tar.gz"
-      sha256 "24371bbd557fef452d2ba939f317e322333acc9a0f2cb6b46aaea0bcf4fcb48a"
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.4/alpaca_0.0.4_darwin_amd64.tar.gz"
+      sha256 "e1bcd5e98cd1fd28c4af080416f975350a68236b92cf2528e6913ce9580dd1d3"
 
       def install
         bin.install "alpaca"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.3/alpaca_0.0.3_darwin_arm64.tar.gz"
-      sha256 "86bc2a059303ece7286e607f138e3b37286714c8a4f3b367a531b6107dbe50f6"
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.4/alpaca_0.0.4_darwin_arm64.tar.gz"
+      sha256 "69baf4ca2653ed99295dbc6f90681e21ba0ef7a72c91661647f8cad1e5253706"
 
       def install
         bin.install "alpaca"
@@ -29,41 +29,18 @@ class Alpaca < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.3/alpaca_0.0.3_linux_amd64.tar.gz"
-      sha256 "e7a7bb9d358e57b514dc43bfe1b535ddcb1fe1224a25184685e201fabe498791"
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.4/alpaca_0.0.4_linux_amd64.tar.gz"
+      sha256 "62f71646f511a49271f7623f69370a4bf1e5e4895b6bd354e104be1a7d004ab7"
       def install
         bin.install "alpaca"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.3/alpaca_0.0.3_linux_arm64.tar.gz"
-      sha256 "7a2e7fe43625602d284a79959fe5a787099cf33f52e2d4aa338b0ed14c272189"
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.4/alpaca_0.0.4_linux_arm64.tar.gz"
+      sha256 "04aade306e91e1adb52f18130bf7767dfb989666539baf973061e04a943b49c0"
       def install
         bin.install "alpaca"
       end
     end
-  end
-
-  def post_install
-    require "digest"
-    require "json"
-    require "fileutils"
-
-    receipt_dir = "#{ENV["HOME"]}/.alpaca"
-    FileUtils.mkdir_p(receipt_dir)
-
-    binary_path = "#{bin}/alpaca"
-    fingerprint = Digest::SHA256.file(binary_path).hexdigest
-    timestamp = Time.now.utc.iso8601
-
-    receipt = {
-      schema_version: 1,
-      install_source: "brew",
-      installed_at: timestamp,
-      binary_path: binary_path,
-      binary_fingerprint: "sha256:#{fingerprint}"
-    }
-
-    File.write("#{receipt_dir}/install.json", JSON.pretty_generate(receipt))
   end
 end
