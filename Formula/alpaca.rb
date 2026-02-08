@@ -5,21 +5,21 @@
 class Alpaca < Formula
   desc "Lightweight llama-server wrapper for macOS"
   homepage "https://github.com/d2verb/alpaca"
-  version "0.0.8"
+  version "0.0.9"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.8/alpaca_0.0.8_darwin_amd64.tar.gz"
-      sha256 "947fd83075a168b13b74c77183a8c7bae93e9c421c454c476b5d3a5bae6cc5b9"
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.9/alpaca_0.0.9_darwin_amd64.tar.gz"
+      sha256 "d6f40a5816c23a9beb9307d726e78b34b1de14f8352be9d6c757279c63d2bfb2"
 
       def install
         bin.install "alpaca"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.8/alpaca_0.0.8_darwin_arm64.tar.gz"
-      sha256 "7325b7e2152268a2a51e894dfd36ad09ba3a5327669d44982ad01f43f4961964"
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.9/alpaca_0.0.9_darwin_arm64.tar.gz"
+      sha256 "168526d6ce53424bd3d3838f1b39d2c555ce09cc01ad2f8f7edf79d033384ff5"
 
       def install
         bin.install "alpaca"
@@ -29,15 +29,15 @@ class Alpaca < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.8/alpaca_0.0.8_linux_amd64.tar.gz"
-      sha256 "ddcbddabf3b23f856044fcbb77a768e77fe60c98d7353a86d4459895fc43c783"
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.9/alpaca_0.0.9_linux_amd64.tar.gz"
+      sha256 "6d1765f8b9d41396a44be87aa72fe82a5d3642f883dcc9071cd3f07734fa0838"
       def install
         bin.install "alpaca"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.8/alpaca_0.0.8_linux_arm64.tar.gz"
-      sha256 "3437f8a55eb6441ed125c17c0c05f3c4784953fa219d32e39226220aba4f1e97"
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.9/alpaca_0.0.9_linux_arm64.tar.gz"
+      sha256 "bcb5967ddbf57dcaea61695e6b479e41c9d8d00269c7b7092b30fd62ddf801d3"
       def install
         bin.install "alpaca"
       end
