@@ -5,21 +5,21 @@
 class Alpaca < Formula
   desc "Lightweight llama-server wrapper for macOS"
   homepage "https://github.com/d2verb/alpaca"
-  version "0.0.13"
+  version "0.0.14"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.13/alpaca_0.0.13_darwin_amd64.tar.gz"
-      sha256 "901db43853e9bb6836877fec9245db47a5ec96e538ce5c466f73776acaecea4a"
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.14/alpaca_0.0.14_darwin_amd64.tar.gz"
+      sha256 "6f633774e752532587c3ae5241f875ac534b0a8f2a1a073c0cc24a6d49700999"
 
       def install
         bin.install "alpaca"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.13/alpaca_0.0.13_darwin_arm64.tar.gz"
-      sha256 "08f83df83dbb9020f0822106d82e8a5156fd6c5b930fc7f24074712c504ed408"
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.14/alpaca_0.0.14_darwin_arm64.tar.gz"
+      sha256 "e10f027df4e06a532850fa9e435ef60556aed410f0c537db4f86d63fc2e432c2"
 
       def install
         bin.install "alpaca"
@@ -29,15 +29,15 @@ class Alpaca < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.13/alpaca_0.0.13_linux_amd64.tar.gz"
-      sha256 "1deb73e1cd3d0e932d04cc45f7c3376da886b41ecf494a2b5348896675c6a711"
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.14/alpaca_0.0.14_linux_amd64.tar.gz"
+      sha256 "70dfb1f36984a774d1137b2f86024f218ff75f02de1d3957d4c53f23a78b8d56"
       def install
         bin.install "alpaca"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.13/alpaca_0.0.13_linux_arm64.tar.gz"
-      sha256 "2cfa613bfed46736e7aac37a2a53eda2fe255557e47c65807c388a94a5d7d2bf"
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.14/alpaca_0.0.14_linux_arm64.tar.gz"
+      sha256 "c4b33bb2edbcded77ba83eee086e01a43a3a73ce2a54dc26c723f3b3f4bbacf4"
       def install
         bin.install "alpaca"
       end
