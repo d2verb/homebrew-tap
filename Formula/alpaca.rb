@@ -5,23 +5,23 @@
 class Alpaca < Formula
   desc "Lightweight llama-server wrapper for macOS"
   homepage "https://github.com/d2verb/alpaca"
-  version "0.0.14"
+  version "0.0.15"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.14/alpaca_0.0.14_darwin_amd64.tar.gz"
-      sha256 "6f633774e752532587c3ae5241f875ac534b0a8f2a1a073c0cc24a6d49700999"
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.15/alpaca_0.0.15_darwin_amd64.tar.gz"
+      sha256 "573556ee590b31c185269edb8899890decc69979246fd34b31801ebbab8a4577"
 
-      def install
+      define_method(:install) do
         bin.install "alpaca"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.14/alpaca_0.0.14_darwin_arm64.tar.gz"
-      sha256 "e10f027df4e06a532850fa9e435ef60556aed410f0c537db4f86d63fc2e432c2"
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.15/alpaca_0.0.15_darwin_arm64.tar.gz"
+      sha256 "04f64b710a43a3889d3dea939830ec744416428508dea425fdef2bc19bb31a47"
 
-      def install
+      define_method(:install) do
         bin.install "alpaca"
       end
     end
@@ -29,16 +29,16 @@ class Alpaca < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.14/alpaca_0.0.14_linux_amd64.tar.gz"
-      sha256 "70dfb1f36984a774d1137b2f86024f218ff75f02de1d3957d4c53f23a78b8d56"
-      def install
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.15/alpaca_0.0.15_linux_amd64.tar.gz"
+      sha256 "49dfed4155ce736df3dd196cefaa6b76102597ad75336b6a46f13007b3637749"
+      define_method(:install) do
         bin.install "alpaca"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d2verb/alpaca/releases/download/v0.0.14/alpaca_0.0.14_linux_arm64.tar.gz"
-      sha256 "c4b33bb2edbcded77ba83eee086e01a43a3a73ce2a54dc26c723f3b3f4bbacf4"
-      def install
+      url "https://github.com/d2verb/alpaca/releases/download/v0.0.15/alpaca_0.0.15_linux_arm64.tar.gz"
+      sha256 "281c2ef11e294ae091a6cd71cef06d3220ad0729f2efb76d3338b6eb4dac8d34"
+      define_method(:install) do
         bin.install "alpaca"
       end
     end
